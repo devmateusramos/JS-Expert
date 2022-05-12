@@ -17,8 +17,7 @@ class File {
   }
 
   static async getFileContent(filePath) {
-    const filename = join(__dirname, filePath)
-    return (await readFile(filename)).toString('utf-8')
+    return (await readFile(filePath)).toString('utf-8')
   }
 
   static isValid(csvString, option = DEFAULT_OPTION) {
@@ -52,3 +51,5 @@ class File {
   // const result = await File.csvToJson('./../mocks/invalid-header.csv')
   console.log(result)
 })()
+
+module.exports = File
